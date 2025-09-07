@@ -8,7 +8,7 @@ def hello():
     link = '<a href = "user/Ateeksh">click me!</a>'
     
     return greetings + link
-f
+
 @app.route("/user/<name>")
 def greeting(name):
     idk = f'hello {name} what are you doing ???<br>'
