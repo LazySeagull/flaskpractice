@@ -3,7 +3,7 @@ from configparser import ConfigParser
 import requests
 
 config = ConfigParser()
-config.read('flaskkipracticekrlo/config.cfg')
+config.read('config.cfg')
 api_key = config.get('API','api_key')
 api_url = ('http://api.openweathermap.org/data/2.5/weather?zip={},us&mode=json&units=imperial&appid={}')
 
@@ -21,7 +21,7 @@ def query_api(zip):
 def result(zip):
     resp = query_api(zip)
     try:
-        text = resp["name"] + "temperature is " + str(resp["main"]["temp"]) + "degrees Fahrenheit with" + resp["weather"][0]["description"] + "."
+        text = resp["name"] +" " + "temperature is " + str(resp["main"]["temp"]) + " degrees Fahrenheit with" + resp["weather"][0]["description"] + "."
     except:
         text = "there was an error the used zip is wrong"
     return text
